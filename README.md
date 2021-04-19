@@ -1,5 +1,7 @@
 # spheremesh
  spherical harmonics for cell shape descriptors
+ 
+ this code accompanies my thesis: [link here in th future]()
 
 ## dependencies
 
