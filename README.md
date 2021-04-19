@@ -10,6 +10,6 @@
 
 ## how to use
 
-see the examples
+for now, see the examples
 
 ... more documentation/examples to follow
