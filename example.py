@@ -3,7 +3,8 @@ import igl
 import numpy as np
 
 
-filename = "cell.obj"
+filename = "data/cell.obj"
+# max degree
 l_max = 16
 
 # read the example .obj triangle mesh

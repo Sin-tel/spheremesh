@@ -10,9 +10,9 @@ def get_area(vertices, faces):
 	M = igl.massmatrix(vertices, faces, igl.MASSMATRIX_TYPE_BARYCENTRIC)
 	return np.sum(M.dot(np.ones(vertices.shape[0])),axis=0)
 
+# translate mesh so that: origin = center of mass
+# scale mesh so that: total area = 4*pi (= area of unit sphere)
 def normalize_area(vertices, faces, M = None):
-	# sets total area of mesh equal to 4*pi (= unit sphere)
-
 	if M is None:
 		M = igl.massmatrix(vertices, faces, igl.MASSMATRIX_TYPE_BARYCENTRIC)
 	A = get_area(vertices, faces)
@@ -111,11 +111,12 @@ def IRF(orig_v, vertices, faces, max_degree = 16):
 	theta = np.arccos(vertices[:,2])
 	phi = np.arctan2(vertices[:,1],vertices[:,0])
 
+	orig_v = normalize_area(orig_v, faces)
 
 	# weighted least squares with mass matrix to account for unequal mesh resolution.
 	W = igl.massmatrix(orig_v, faces, igl.MASSMATRIX_TYPE_BARYCENTRIC)
 
-	orig_v = normalize_area(orig_v, faces, W)
+	
 
 
 	weights = np.zeros( (num_harm,3) )

@@ -1,6 +1,7 @@
 import igl
 import numpy as np
 import scipy as sp 
+from .fit import normalize_area
 
 from scipy.sparse.linalg import spsolve
 from scipy.special import sph_harm
@@ -103,4 +104,11 @@ def mobius_center(orig_v,vertices,faces):
 		vertices = (1 - norm(c)**2)*vertices + c
 
 	return vertices
+
+def get_rho(orig_v,vertices,faces):
+	orig_v = normalize_area(orig_v, faces)
+	a1 = igl.massmatrix(orig_v, faces, igl.MASSMATRIX_TYPE_BARYCENTRIC).diagonal()
+	a2 = igl.massmatrix(vertices, faces, igl.MASSMATRIX_TYPE_BARYCENTRIC).diagonal()
+	
+	return np.divide(a1,a2)
 
