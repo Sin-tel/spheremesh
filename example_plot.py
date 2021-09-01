@@ -4,7 +4,7 @@ import numpy as np
 
 
 filename = "data/cell.obj"
-l_max = 32
+l_max = 12
 
 orig_v, faces = igl.read_triangle_mesh(filename)
 
@@ -34,5 +34,6 @@ def update(value):
 		
 	return
 
+#p.set_background((1,1,1))
 p.add_checkbox_button_widget(update)
 p.show()

@@ -11,9 +11,9 @@ def mesh(p, V,F,K=None):
 	surf = pv.PolyData(V, face_arr)
 	if K is not None:
 		surf["colors"] = K
-		p.add_mesh(surf, name='mesh', show_edges=True, rgb=False, smooth_shading=True, cmap = "bwr", clim = [-2,2])
+		p.add_mesh(surf, name='mesh', show_edges=False, rgb=False, smooth_shading=True, cmap = "bwr", clim = [-2,2])
 	else:
-		p.add_mesh(surf, name='mesh', show_edges=True, rgb=False, smooth_shading=False)
+		p.add_mesh(surf, name='mesh', show_edges=False, rgb=False, smooth_shading=False)
 
 	p.show_axes()
 	#p.show()
