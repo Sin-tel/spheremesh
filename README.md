@@ -1,17 +1,17 @@
-# spheremesh
- spherical harmonics for cell shape descriptors
+# Spheremesh
+ This package provides functionality for the analysis of cell shape using the spherical harmonics decomposition.
  
- this code accompanies my thesis: [link here in the future]
+ It accompanies my dissertation "Cell Shape Analysis Using Spherical Harmonics", Master of Science, Bioinformatics.
 
-## dependencies
+## Dependencies
 
 * [libigl python bindings](https://github.com/libigl/libigl-python-bindings)
 * [NumPy](https://numpy.org/)
 * [SciPy](https://www.scipy.org/)
-* (optional) [PyVista](https://github.com/pyvista/pyvista) for plotting the resulting meshes
+* (optional) [PyVista](https://github.com/pyvista/pyvista) is used to plot the resulting meshes.
 
-## how to use
+## How to use
 
-for now, see the examples
+Please see the provided examples for example use cases.
 
-... more documentation/examples to follow
+This repository will be updated in the future when new features are added.
