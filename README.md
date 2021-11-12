@@ -14,4 +14,5 @@
 
 Please see the provided examples for example use cases.
 
-This repository will be updated in the future when new features are added.
+When this code gets updated it will be in another repository.
+Link will be here when it is publicly released.
